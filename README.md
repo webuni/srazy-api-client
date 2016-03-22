@@ -6,10 +6,12 @@ Srazy.info API Client
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webuni/srazy-api-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webuni/srazy-api-client/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/196f4e99-47c7-4801-ab67-707d2a852257/mini.png)](https://insight.sensiolabs.com/projects/196f4e99-47c7-4801-ab67-707d2a852257)
 
+Chybějící API pro http://srazy.info
+
 Instalace
 ---------
 
-Knihovnu naintsalujem přes Composer:
+Knihovnu nainstalujeme přes Composer:
 
 ```
 composer require webuni/srazy-api-client

@@ -129,6 +129,11 @@ class Event
         $this->end = $end;
     }
 
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
     public function setLocation($location)
     {
         $this->location = $location;

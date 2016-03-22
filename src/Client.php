@@ -77,12 +77,12 @@ class Client
 
     public function model($class, $uri)
     {
-        return $this->manager->get($class, $uri, $this->initializer($class, $uri));
+        return $this->manager->get($class, $uri, $this->initializer($class));
     }
 
-    private function initializer($class, $uri)
+    private function initializer($class)
     {
-        $initializer = function (GhostObjectInterface &$wrappedObject, $method, array $parameters) use ($class, $uri) {
+        $initializer = function (GhostObjectInterface &$wrappedObject, $method, array $parameters) use ($class) {
             if (!method_exists($wrappedObject, $method)) {
                 return;
             }
