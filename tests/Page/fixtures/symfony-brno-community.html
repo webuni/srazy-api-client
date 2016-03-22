@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="description" content="Srazy.info  - Online nástroj pro pořádání srazů" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="7fUzB43pneqjD7WEIOGNVTTjOa7coql6frdj1-AsCbg" />
+	<meta property="fb:admins" content="zraly" />
+	<meta property="og:site_name" content="Srazy.info" />
+
+			<meta property="og:image" content="http://srazy.info/data/events/2350-q0nuo-drupal-symfony.png" />
+			<meta property="og:title" content="Symfony Brno" />
+			<meta property="og:type" content="activity" />
+
+
+	<title>Lidé sledující tento sraz - Srazy.info</title>
+
+
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css?v=1" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/font-awesome.css?v=2" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/datepicker.css" type="text/css" media="screen" />
+
+
+
+
+	<link rel="stylesheet" media="screen" href="/css/screen.css?v=6" type="text/css" />
+	<link rel="stylesheet" media="print" href="/css/print.css" type="text/css" />
+
+
+
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/netteForms.js"></script>
+	<script type="text/javascript" src="/js/nette.ajax.js?v=1"></script>
+	<script src="/bootstrap/js/bootstrap.min.js?v=1" type="text/javascript"></script>
+
+
+	<script src="/js/main.js?v=3" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-89820-10']);
+	  _gaq.push(['_setDomainName', 'none']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+
+
+</head>
+
+<body>
+
+	<!-- part for every layout -->
+
+
+	<div class="modal in fade" id="modal-report" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Nahlásit chybu či napsat názor</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+            Jsme v čilém vývoji a velmi nám pomůže, pokud nám napíšete váš názor na to, co se vám <b>nelíbí</b>, co vám přijde <b>divné</b> nebo co <b>nechápete</b>. Rádi bychom také věděli,
+            pokud jste někde objevili nějakou <b>chybu</b>. Pokusíme se ji brzo opravit.
+        </p>
+        <p>
+            Je to anonymní. Chcete-li kontaktovat autora přímo, napište mu email: jirka&#64;blueboard.cz
+        </p>
+<form action="/symfony-brno/komunita/?do=reportForm-submit" method="post" id="frm-reportForm"><label for="frmreportForm-name">Jméno:</label>						<input type="text" size="40" name="name" id="frmreportForm-name" value="Martin Hasoň" />
+<label for="frmreportForm-email">E-mail, pokud chcete dostat odpověď:</label>						<input type="text" size="40" name="email" id="frmreportForm-email" value="martin.hason&#64;gmail.com" />
+<label for="frmreportForm-text"></label>						<textarea rows="5" cols="60" name="text" id="frmreportForm-text" required="required" data-nette-rules="{op:':filled',msg:'Write some feedback please.'}"></textarea>
+
+						<input class="spam hidden" type="text" size="40" name="spam" id="frmreportForm-spam" value="" />
+
+						<input class="btn btn-primary" type="submit" name="sub" id="frmreportForm-sub" value="Odeslat" />
+
+
+
+</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="ajax-progress">
+		<div></div>
+	</div>
+
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+
+			<div class="visible-phone pull-left">
+				<a class="btn" title="Vytvořit sraz" href="/vytvorit-sraz/"><i class="icon-plus"></i></a>
+			</div>
+
+
+
+			<ul class="nav pull-right nav-login" id="snippet--loginInfo">
+					<li class="hidden-phone">
+						<a href="/nastaveni/"><i class="icon-white icon-map-marker"></i> Brno</a>
+					</li>
+					<li class="divider-vertical hidden-phone"></li>
+
+					<li class="dropdown user-info">
+    					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img  src="/data/avatars/55e54daa5b101.gif" alt="avatar" class="user-avatar" /><b class="caret hidden-phone"></b></a>
+    					<ul class="dropdown-menu">
+							<li><a title="Profil"  href="/lide/martin-hason">Profil</a></li>
+							<li><a title="Nastavení"  href="/nastaveni/">Nastavení</a></li>
+							<li><a title="Moje srazy" href="/co-spravuji/">Moje srazy</a></li>
+							<li><a href="/symfony-brno/komunita/?do=logout"><i class="icon-off"></i> Odhlásit</a></li>
+    					</ul>
+  					</li>
+			</ul>
+
+			<a class="navbar-brand" href="/"><img class="logo" src="/images/logo-cs.png?v=1" alt="Srazy.info" /></a>
+
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li>
+					<a title="Vytvořit sraz" href="/vytvorit-sraz/"><i class="icon-plus"></i> <b>Vytvořit sraz</b></a>
+				</li>
+			</ul>
+<form class="navbar-form pull-left hidden-phone" action="/symfony-brno/komunita/?do=searchForm-submit" method="post" id="frm-searchForm">				<input class="search-query" type="text" size="20" placeholder="Search" name="s" id="frmsearchForm-s" required="required" data-nette-rules="{op:':filled',msg:&quot;\&quot;Nic\&quot; se velmi \u0161patn\u011b hled\u00e1, napi\u0161te n\u011bjak\u00fd text a zkuste to pros\u00edm znovu.&quot;}" value="" />
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li class="divider-vertical"></li>
+				<li>
+					<a class="language-flag" title="english version" href="http://eventle.com">english</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+
+	<div class="container">
+
+
+
+
+<div id="snippet--userMessages">						<div class="flashes">
+							
+						</div>
+
+
+
+
+</div>
+
+		<!-- end of part for every layout -->
+
+	<div class="vevent event-wrap" itemscope itemtype="http://schema.org/Event">
+
+		<div class=" event-header">
+
+
+					<img data-placement="left"  src="/data/events/2350-q0nuo-drupal-symfony.png" class="event-logo hidden-phone" alt="logo" itemprop="image" />
+
+
+				<h1 class="event-title">
+					<span class="summary" itemprop="name">
+						<a href="/symfony-brno">Symfony Brno</a>
+					</span>
+				</h1>
+
+<span id="snippet--followButton">								<a rel="tooltip" data-placement="right" title="Sledování srazu vám umožní vědět o dalších termínech" class="event-follow event-link ajax btn btn-small" href="/symfony-brno/komunita/?follow=true&amp;do=Follow">Sledovat</a>
+</span>				<a class="event-link" href="/symfony-brno/komunita/">Komunita <span class="badge">16</span></a>
+				<a class="event-link" href="/symfony-brno/terminy/">Všechny termíny <span class="badge">8</span></a>
+				<a class="event-link" href="/vytvorit-sraz/?event=2350">Přidat další termín</a>
+
+
+			<div class="row">
+				<div class="span12">
+
+
+
+					<div class="event-desc editable" itemprop="description"  id="snippet--editEventDesc">
+						<div class="event-desc-inner">
+								
+<p>Vývojáři, uživatelé, obdivovatelé, zvědavci a nadšenci PHP frameworku
+Symfony z Brna. Scházíme se podebatovat o našich aktuálních problémech a
+úspěších s tvorbou aplikací. A i když Symfony framework hraje první
+housle, tak Doctrina, Drupal či Node patří do každého správného
+orchestru.</p>
+
+<!-- by Texy2! -->
+						</div>
+						<div class="event-desc-form">
+<form class="form-vertical ajax" action="/symfony-brno/komunita/?do=editEventDescForm-submit" method="post" id="frm-editEventDescForm">								<div class="controls">
+									<textarea style="width: 100%; box-sizing: border-box" cols="80" rows="4" name="desc" id="frmeditEventDescForm-desc">Vývojáři, uživatelé, obdivovatelé, zvědavci a nadšenci PHP frameworku Symfony z Brna. Scházíme se podebatovat o našich aktuálních problémech a úspěších s tvorbou aplikací. A i když Symfony framework hraje první housle, tak Doctrina, Drupal či Node patří do každého správného orchestru.</textarea>
+								</div>
+								<div class="controls">
+									<input class="btn btn-primary" type="submit" name="sub" id="frmeditEventDescForm-sub" value="Uložit" />
+									<input type="button" class = "btn editable-cancel" value="Zpět" />
+								</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+		<div class=" fadeInUp animated animated-delayed">
+			<div class="event-arrow">
+				<div class="arrow-up hidden-phone" style="border-bottom-color: #fff; margin-left: 60px"></div>
+				<div class="arrow-up-border hidden-phone" style="border-bottom-color: #ccc; margin-left: 60px"></div>
+			</div>
+			<div class="event-body">
+<div class="event-main">
+	<h2 class="margin-bottom">Lidé sledující tento sraz</h2>
+	<div class="user-list">
+
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Martin Mayer" data-original-title="Martin Mayer" href="/lide/mayermartin">
+					<img src="/data/avatars/449-1936214_1201818651464_7028274_n.jpg" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Filip Procházka" data-original-title="Filip Procházka" href="/lide/filip-prochazka">
+					<img src="/data/avatars/814-internet.jpg" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Vojtěch Dobeš" data-original-title="Vojtěch Dobeš" href="/lide/vojtech-dobes">
+					<img src="/data/avatars/54ee35ee6ee6e.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Petr Podrabsky" data-original-title="Petr Podrabsky" href="/lide/petr-podrabsky-2">
+					<img src="/data/avatars/562e828f638db.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Petr Jirásek" data-original-title="Petr Jirásek" href="/lide/petr-jirasek">
+					<img src="/data/avatars/" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Tomáš Votruba" data-original-title="Tomáš Votruba" href="/lide/schmutzka">
+					<img src="/data/avatars/18155-c1df81abc43996309e1a89c8db26eb95.jpeg" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Jiří Pudil" data-original-title="Jiří Pudil" href="/lide/jiri-pudil">
+					<img src="/data/avatars/55fa8ae7148eb.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Jan Suchánek" data-original-title="Jan Suchánek" href="/lide/jan-suchanek">
+					<img src="/data/avatars/27201-suchanek.jpg" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Radim Klaška" data-original-title="Radim Klaška" href="/lide/radim-klaska-2">
+					<img src="/data/avatars/5551f494eeafe.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Petr Jelínek" data-original-title="Petr Jelínek" href="/lide/petr-jelinek-5">
+					<img src="/data/avatars/" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Petr Jaša" data-original-title="Petr Jaša" href="/lide/petr-jasa-2">
+					<img src="/data/avatars/tw-181711529.png" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="people of Designeo" data-original-title="people of Designeo" href="/lide/monika-6">
+					<img src="/data/avatars/73695-10157347_10153953457050321_954110919_n.jpg" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Tomáš Kliner" data-original-title="Tomáš Kliner" href="/lide/tomas-kliner-3">
+					<img src="/data/avatars/" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Radoslav Štofko" data-original-title="Radoslav Štofko" href="/lide/radoslav-stofko">
+					<img src="/data/avatars/55e4751381441.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Frantisek Troster" data-original-title="Frantisek Troster" href="/lide/frantisek-troster">
+					<img src="/data/avatars/tw-44083223.png" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+			<div class="user">
+				<a class="attendee-name" rel="tooltip" title="Lukáš Břečka" data-original-title="Lukáš Břečka" href="/lide/lukas-brecka">
+					<img src="/data/avatars/fb-10206482748681846.gif" alt="avatar" class="avatar-small" />
+				</a>
+			</div>
+		<div class="clearfix"></div>
+
+	</div>
+</div>
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+		<div class="footer hidden-phone">
+			<a id="reportButton" data-toggle="modal" href="#modal-report">Nahlásit chybu či napsat názor</a> &bull;
+			<a href="http://twitter.com/srazy">Twitter</a> &bull;
+			<a href="http://facebook.com/srazy.info">Facebook</a> &bull;
+			<a href="/napoveda/api">API</a> &bull;
+			<a href="http://glyphicons.com/">Glyphicons</a>
+			 &bull; <a href="http://blog.srazy.info">Blog</a> &bull; <a href="http://eventle.com">English</a>
+
+		</div>
+
+	</div>
+
+
+
+
+	<div id="fb-root" class="hidden"></div>
+	<script src="http://connect.facebook.net/cs_CZ/all.js"></script>
+	<script type="text/javascript">
+		var Facebook = {
+			appId: "56902308197",
+			loginUrl: "\/symfony-brno\/komunita\/?do=FbLogin",
+			connectUrl: "#"
+		};
+	</script>
+
+
+<!-- BlueBoard.cz Pocitadlo -->
+<span id="bbpocitadlo-span-st8nb2sa4v4jru55x9j0krn57kikh9"><a id="bbpocitadlo-st8nb2sa4v4jru55x9j0krn57kikh9" href="http://blueboard.cz"></a></span>
+<script type="text/javascript" src="http://blueboard.cz/counter_1.php?jid=st8nb2sa4v4jru55x9j0krn57kikh9"></script>
+<!-- BlueBoard.cz Pocitadlo KONEC -->
+
+
+</body>
+</html>

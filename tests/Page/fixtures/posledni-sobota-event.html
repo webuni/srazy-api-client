@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="description" content="Srazy.info  - Online nástroj pro pořádání srazů" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="7fUzB43pneqjD7WEIOGNVTTjOa7coql6frdj1-AsCbg" />
+	<meta property="fb:admins" content="zraly" />
+	<meta property="og:site_name" content="Srazy.info" />
+
+			<meta property="og:image" content="http://srazy.info/data/events/128.jpg" />
+			<meta property="og:title" content="Poslední sobota: Brno 2016 - Rychlost" />
+			<meta property="og:description" content="Poslední sobota je pravidelným místem setkání všech fanoušků programování webových aplikací, ať už to jsou odborníci nebo amatéři. Znalost Nette Frameworku je samozřejmě výhodou. 
+
+Vstup na akci je zdarma, jen prosím potvrďte účast." />
+
+
+	<title>Poslední sobota - Srazy.info</title>
+
+
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css?v=1" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/font-awesome.css?v=2" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/datepicker.css" type="text/css" media="screen" />
+
+
+
+
+	<link rel="stylesheet" media="screen" href="/css/screen.css?v=6" type="text/css" />
+	<link rel="stylesheet" media="print" href="/css/print.css" type="text/css" />
+
+
+
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/netteForms.js"></script>
+	<script type="text/javascript" src="/js/nette.ajax.js?v=1"></script>
+	<script src="/bootstrap/js/bootstrap.min.js?v=1" type="text/javascript"></script>
+
+
+	<script src="/js/main.js?v=3" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-89820-10']);
+	  _gaq.push(['_setDomainName', 'none']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+
+
+</head>
+
+<body>
+
+	<!-- part for every layout -->
+
+
+	<div class="modal in fade" id="modal-report" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Nahlásit chybu či napsat názor</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+            Jsme v čilém vývoji a velmi nám pomůže, pokud nám napíšete váš názor na to, co se vám <b>nelíbí</b>, co vám přijde <b>divné</b> nebo co <b>nechápete</b>. Rádi bychom také věděli,
+            pokud jste někde objevili nějakou <b>chybu</b>. Pokusíme se ji brzo opravit.
+        </p>
+        <p>
+            Je to anonymní. Chcete-li kontaktovat autora přímo, napište mu email: jirka&#64;blueboard.cz
+        </p>
+<form action="/posledni-sobota/6226?do=reportForm-submit" method="post" id="frm-reportForm"><label for="frmreportForm-name">Jméno:</label>						<input type="text" size="40" name="name" id="frmreportForm-name" value="" />
+<label for="frmreportForm-email">E-mail, pokud chcete dostat odpověď:</label>						<input type="text" size="40" name="email" id="frmreportForm-email" value="" />
+<label for="frmreportForm-text"></label>						<textarea rows="5" cols="60" name="text" id="frmreportForm-text" required="required" data-nette-rules="{op:':filled',msg:'Write some feedback please.'}"></textarea>
+
+						<input class="spam hidden" type="text" size="40" name="spam" id="frmreportForm-spam" value="" />
+
+						<input class="btn btn-primary" type="submit" name="sub" id="frmreportForm-sub" value="Odeslat" />
+
+
+
+</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="modal in fade" id="modal-login">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="modal-title">Přihlásit se</h3>
+					</div>
+					<div class="modal-body">
+<div id="snippet--login">								<div class="row">
+									<div class="col-span-6">
+<form class="form-vertical ajax" action="/posledni-sobota/6226?do=loginForm-submit" method="post" id="frm-loginForm">											<input class="margin-bottom" type="email" placeholder="Email" size="30" name="email" id="frmloginForm-email" required="required" data-nette-rules="{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;},{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;}" value="" /> <br />
+											<input class="margin-bottom" placeholder="Password" type="password" name="pass" id="frmloginForm-pass" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te heslo.&quot;}" /> <br />
+											<input class="btn btn-primary" type="submit" name="sub" id="frmloginForm-sub" value="Přihlásit se" />
+
+												<input data-modal-fill="redirect" type="hidden" name="redirect" id="frmloginForm-redirect" value="" />
+</form>
+									</div>
+									<div class="col-span-6">
+											<h4 class="no-top-margin">Nebo se přihlašte pomocí</h4>
+											<a class="ajax-like" href="/posledni-sobota/6226?do=FbConnect" title="Facebook" rel="tooltip"><img src="/images/icons/social/facebook_32.png" alt="Facebook" /></a>
+											<a class="ajax-like" href="/posledni-sobota/6226?login=1&amp;do=twitterConnect" title="Twitter" rel="tooltip" ><img src="/images/icons/social/twitter_32.png" alt="Twitter" /></a>
+										<div class="alert alert-warning margin-top">
+											Pokud se vám nejde přihlásit přes Twitter, odeberte si Srazy.info z aplikací Twitteru a zkuste to znovu. Děkujeme
+										</div>
+									</div>
+								</div>
+
+								<div class="clear"></div>
+								<hr />
+
+								<p style="text-align: right">
+									<a href="/vytvorit-ucet/" class="btn btn-success"><i class="icon-plus"></i> Vytvořit nový účet</a>
+									<a href="#" class="btn" data-toggle-element="lost-password"><i class="icon-question-sign"></i> Nevím heslo</a>
+								</p>
+								<div id="lost-password" class="hidden">
+									<hr />
+									<h3>Nevím heslo</h3>
+<form class="form-inline margin-top" action="/posledni-sobota/6226?do=lostPassForm-submit" method="post" id="frm-lostPassForm">										<div class="input-group">
+											<input class="" placeholder="Email" type="text" size="30" name="email" id="frmlostPassForm-email" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;},{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;}" value="" />
+											<span class="input-group-btn"><input class="btn btn-primary" type="submit" name="sub" id="frmlostPassForm-sub" value="Zaslat žádost o nové heslo" /></span>
+										</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+								</div>
+
+
+</div>					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="ajax-progress">
+		<div></div>
+	</div>
+
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+
+			<div class="visible-phone pull-left">
+				<a class="btn" title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i></a>
+			</div>
+
+
+
+			<ul class="nav pull-right nav-login" id="snippet--loginInfo">
+					<li class="user-info"><a data-toggle="modal" href="#modal-login" data-form-fill='{ "name": "redirect", "value": ""}'><i class="icon-key"></i> <span class="hidden-phone">Přihlásit se</span></a></li>
+			</ul>
+
+			<a class="navbar-brand" href="/"><img class="logo" src="/images/logo-cs.png?v=1" alt="Srazy.info" /></a>
+
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li>
+					<a title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i> <b>Vytvořit sraz</b></a>
+				</li>
+			</ul>
+<form class="navbar-form pull-left hidden-phone" action="/posledni-sobota/6226?do=searchForm-submit" method="post" id="frm-searchForm">				<input class="search-query" type="text" size="20" placeholder="Search" name="s" id="frmsearchForm-s" required="required" data-nette-rules="{op:':filled',msg:&quot;\&quot;Nic\&quot; se velmi \u0161patn\u011b hled\u00e1, napi\u0161te n\u011bjak\u00fd text a zkuste to pros\u00edm znovu.&quot;}" value="" />
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li class="divider-vertical"></li>
+				<li>
+					<a class="language-flag" title="english version" href="http://eventle.com">english</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+
+	<div class="container">
+
+
+
+
+<div id="snippet--userMessages">						<div class="flashes">
+							
+						</div>
+
+
+
+
+</div>
+
+		<!-- end of part for every layout -->
+
+	<div class="vevent event-wrap" itemscope itemtype="http://schema.org/Event">
+
+		<div class=" event-header">
+
+
+					<img data-placement="left"  src="/data/events/128.jpg" class="event-logo hidden-phone" alt="logo" itemprop="image" />
+
+
+				<h1 class="event-title">
+					<span class="summary" itemprop="name">
+Poslední sobota					</span>
+				</h1>
+
+					<a rel="tooltip" data-placement="bottom" title="Sledování srazu vám umožní vědět o dalších termínech" class="event-follow event-link ajax btn btn-small" data-form-fill='{ "name": "redirect", "value": "/posledni-sobota/6226?follow=true&amp;do=Follow"}' href="#modal-login" data-toggle="modal">Sledovat</a>
+				<a class="event-link" href="/posledni-sobota/komunita/">Komunita <span class="badge">523</span></a>
+				<a class="event-link" href="/posledni-sobota/terminy/">Všechny termíny <span class="badge">73</span></a>
+
+
+			<div class="row">
+				<div class="span12">
+
+
+
+					<div class="event-desc " itemprop="description"  id="snippet--editEventDesc">
+						<div class="event-desc-inner">
+								
+<p>Poslední sobota je pravidelným místem setkání všech fanoušků
+programování webových aplikací, ať už to jsou odborníci nebo amatéři.
+Znalost Nette Frameworku je samozřejmě výhodou.</p>
+
+<p>Vstup na akci je zdarma, jen prosím potvrďte účast.</p>
+
+<!-- by Texy2! -->
+						</div>
+						<div class="event-desc-form">
+<form class="form-vertical ajax" action="/posledni-sobota/6226?do=editEventDescForm-submit" method="post" id="frm-editEventDescForm">								<div class="controls">
+									<textarea style="width: 100%; box-sizing: border-box" cols="80" rows="4" name="desc" id="frmeditEventDescForm-desc">Poslední sobota je pravidelným místem setkání všech fanoušků programování webových aplikací, ať už to jsou odborníci nebo amatéři. Znalost Nette Frameworku je samozřejmě výhodou. 
+
+Vstup na akci je zdarma, jen prosím potvrďte účast.</textarea>
+								</div>
+								<div class="controls">
+									<input class="btn btn-primary" type="submit" name="sub" id="frmeditEventDescForm-sub" value="Uložit" />
+									<input type="button" class = "btn editable-cancel" value="Zpět" />
+								</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+		<div class=" fadeInUp animated animated-delayed">
+			<div class="event-arrow">
+				<div class="arrow-up hidden-phone" style="border-bottom-color: #fff; margin-left: 60px"></div>
+				<div class="arrow-up-border hidden-phone" style="border-bottom-color: #ccc; margin-left: 60px"></div>
+			</div>
+			<div class="event-body">
+<div class="row">
+
+
+	<div class="col-span-8 event-main">
+
+<div id="snippet--notification"></div>
+
+			<h2 class="date-title">Brno 2016 - Rychlost</h2>
+			<hr />
+		<i class="icon-calendar text-muted pull-left" style="font-size: 26px; padding: 2px 10px 0 0; width: 35px"></i>
+		<h3 class="event-dateplace">
+
+				<time class="dtstart" datetime="2016-02-27T15:00" itemprop="startDate">
+					Dnes&nbsp;&nbsp;15:00
+				</time>
+
+
+
+
+		</h3>
+		<div class="clearfix" style="margin-bottom: 10px"></div>
+
+
+
+			<div itemprop="location" itemscope itemtype="http://schema.org/Place">
+				<i class="icon-map-marker text-muted pull-left" style="font-size: 30px; padding: 5px 7px 0 3px; width: 35px"></i>
+				<div class="pull-left">
+					<h3 class="event-dateplace"><a target="_blank" href="http://maps.google.com?q=49.2265,16.5971&amp;t=m"><span class="event-location-name" >FIT VUT Brno - Královo Pole</span></a></h3>
+					<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Božetěchova 1, Brno</span>
+
+				</div>
+			</div>
+
+		<div class="clearfix"></div>
+
+<div id="snippet--attending">
+				<hr />
+
+				<div class="row">
+
+					<div class="col-span-4">
+
+
+
+								<a class="btn btn-primary btn-large pull-left" href="#modal-login" data-toggle="modal">Chcete přijít?</a>
+
+					</div>
+					<div class="col-span-6">
+
+					</div>
+					<div class="col-span-6">
+							<p class="event-maxusers-text">
+									Počet míst není omezen
+							</p>
+					</div>
+				</div>
+
+
+</div>
+
+
+
+
+		<div class="clearfix"></div>
+
+		<hr />
+
+
+
+
+
+			
+<p><a
+href="https://forum.nette.org/cs/25546-posledni-sobota-77-rychlost-brno-27-2-2016#p169809"
+rel="nofollow">https://forum.nette.org/…no-27-2-2016#…</a></p>
+
+<p>Program je ve výstavbě a časy se ještě mohou měnit a po zkušenostech
+víme že se mění :)</p>
+
+<p>Díky<br />
+<a href="http://jetbrains.com" rel="nofollow">JetBrains</a><br />
+<a href="http://peckadesign.cz" rel="nofollow">PeckaDesign</a><br />
+<a href="http://www.proofreason.com/" rel="nofollow">Proof &amp; Reason</a><br
+/>
+<a href="http://about.tripomatic.com/career/" rel="nofollow">Tripomatic</a></p>
+
+
+
+
+
+
+			<hr />
+			<a class="pull-right btn btn-small" target="_blank" href="/program/?date=6226">Fullscreen program</a>
+			<div class="clearfix"></div>
+<div id="snippet--program">
+
+<dl class="program row">
+			<dt class="col-span-4">
+				09:30
+			</dt>
+			<dd class="program-type-other col-span-7">
+				<div class="program-title">
+						door open
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				10:00
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Workshop - Rychlost
+				</div>
+				<div class="program-speaker">
+					David Matějka
+				</div>
+				<div class="program-desc">
+					<small>Rychlost a nástroje xdebug a blackfire
+
+(POZOR v Impact Hub/Brno, Cyrilská 7)
+</small>
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				15:00
+			</dt>
+			<dd class="program-type-start col-span-7">
+				<div class="program-title">
+						Zahájení
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				15:15
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						AWS &amp; Nette
+				</div>
+				<div class="program-speaker">
+					Jan Škrášek
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				16:00
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Nittro, super pohon pro netteweby (light)
+				</div>
+				<div class="program-speaker">
+					Honza Černý
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				16:30
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Jak na cache s ORM
+				</div>
+				<div class="program-speaker">
+					Milan Pála
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				17:30
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Nette Tester plugin (light)
+				</div>
+				<div class="program-speaker">
+					Jirka Pudil
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				18:00
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Jak použít Blackfire k optimalizaci výkonu aplikace
+				</div>
+				<div class="program-speaker">
+					Vojtěch Dobeš
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				18:45
+			</dt>
+			<dd class="program-type-talk col-span-7">
+				<div class="program-title">
+						Nejlepší cache je žádná cache (light)
+				</div>
+				<div class="program-speaker">
+					Filip Procházka
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				19:00
+			</dt>
+			<dd class="program-type-end col-span-7">
+				<div class="program-title">
+						Zakončení
+				</div>
+				<div class="program-desc">
+					<small>slosování o JetBrains licenci</small>
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+			<dt class="col-span-4">
+				19:30
+			</dt>
+			<dd class="program-type-beer col-span-7">
+				<div class="program-title">
+						Pivo
+				</div>
+				<div class="program-desc">
+					<small>Přesun na pivo</small>
+				</div>
+
+			</dd>
+			<div class="clearfix"></div>
+</dl>
+</div>
+
+
+
+
+
+
+
+	</div>
+
+
+	<div class="col-span-4 event-side pull-right">
+		<div class="event-side-inner">
+			<div class="visitors" id="snippet--visitors">
+				<div id="snippet--visitorsyes">
+					<h4 class="no-margin-top">Potvrzení hosté: <span class="text-muted">82</span></h4>
+					<div class="attending user-list ">
+	<div data-title="Tonny Vlček" class="user temp0">
+			<a  class="attendee-name"  href="/lide/tonny-vlcek">
+				<img src="/data/avatars/tw-311171993.png" alt="Tonny Vlček" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Lukáš Prudil" class="user temp0">
+			<a  class="attendee-name"  href="/lide/lukas-prudil">
+				<img src="/data/avatars/tw-802472407.png" alt="Lukáš Prudil" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Michal Tupý" class="user temp0">
+			<a  class="attendee-name"  href="/lide/michal-tupy">
+				<img src="/data/avatars/fb-1127948600550842.gif" alt="Michal Tupý" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Vojtěch Studenka" class="user temp0">
+			<a  class="attendee-name"  href="/lide/vojtech-studenka">
+				<img src="/data/avatars/fb-1140701731.gif" alt="Vojtěch Studenka" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="František Polášek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/frantisek-polasek">
+				<img src="/data/avatars/fb-1635435746.gif" alt="František Polášek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Josef Čáslavský" class="user temp0">
+			<a  class="attendee-name"  href="/lide/josef-caslavsky">
+				<img src="/data/avatars/" alt="Josef Čáslavský" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Roman Mátyus" class="user temp0">
+			<a  class="attendee-name"  href="/lide/romiix-org">
+				<img src="/data/avatars/4425-red_panda_mini.jpg" alt="Roman Mátyus" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Honza Kadeřábek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/honza-kaderabek">
+				<img src="/data/avatars/fb-10201292684435180.gif" alt="Honza Kadeřábek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Martin Skyba" class="user temp0">
+			<a  class="attendee-name"  href="/lide/martin-skyba">
+				<img src="/data/avatars/" alt="Martin Skyba" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Ondra Votava" class="user temp0">
+			<a  class="attendee-name"  href="/lide/ondra-votava-2">
+				<img src="/data/avatars/tw-134902096.png" alt="Ondra Votava" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="David Dušek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/david-dusek-3">
+				<img src="/data/avatars/fb-10205890720609016.gif" alt="David Dušek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Pavel Kocman" class="user temp0">
+			<a  class="attendee-name"  href="/lide/pavel-kocman">
+				<img src="/data/avatars/" alt="Pavel Kocman" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Zbyněk Malinkovič" class="user temp0">
+			<a  class="attendee-name"  href="/lide/zbynek-malinkovic">
+				<img src="/data/avatars/fb-944044135703541.gif" alt="Zbyněk Malinkovič" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="matyxcz" class="user temp0">
+			<a  class="attendee-name"  href="/lide/jixis">
+				<img src="/data/avatars/70982-avatar_small.png" alt="matyxcz" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Jiří Bok" class="user temp0">
+			<a  class="attendee-name"  href="/lide/jiri-bok">
+				<img src="/data/avatars/" alt="Jiří Bok" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Zbysek Lipka" class="user temp0">
+			<a  class="attendee-name"  href="/lide/zbysek-lipka-2">
+				<img src="/data/avatars/61161-1309766708d57c6662.jpg" alt="Zbysek Lipka" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					jsem ten ktery jsem
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Michal Petrek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/michal-petrek">
+				<img src="/data/avatars/" alt="Michal Petrek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Rostislav Wolný" class="user temp0">
+			<a  class="attendee-name"  href="/lide/rostislav-wolny-3">
+				<img src="/data/avatars/tw-60625520.png" alt="Rostislav Wolný" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Marek Juras" class="user temp0">
+			<a  class="attendee-name"  href="/lide/marek-juras">
+				<img src="/data/avatars/5566495f91cdf.gif" alt="Marek Juras" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Vladimír Hůla" class="user temp0">
+			<a  class="attendee-name"  href="/lide/vladimir-hula">
+				<img src="/data/avatars/fb-1682035045.gif" alt="Vladimír Hůla" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Petr Gaďorek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/petr-gadorek-2">
+				<img src="/data/avatars/" alt="Petr Gaďorek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Petr Gadorek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/petr-gadorek">
+				<img src="/data/avatars/" alt="Petr Gadorek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Antonín Crha" class="user temp0">
+			<a  class="attendee-name"  href="/lide/antonin-crha-2">
+				<img src="/data/avatars/" alt="Antonín Crha" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Michal Sänger" class="user temp0">
+			<a  class="attendee-name"  href="/lide/michal-sanger">
+				<img src="/data/avatars/2443.gif" alt="Michal Sänger" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+						<p>
+							<div class="clearfix"></div>
+							<a rel="tooltip" title="Zobrazit všechny" data-toggle="modal" href="#modal-attenders-yes">+ další</a>
+						</p>
+
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+				<div id="snippet--visitorsmaybe">
+					<h4>Možná se zúčastní: <span class="text-muted">13</span></h4>
+					<div class="attending user-list ">
+	<div data-title="Ondřej Pělucha" class="user temp0">
+			<a  class="attendee-name"  href="/lide/ondrej-pelucha">
+				<img src="/data/avatars/fb-100001424200440.gif" alt="Ondřej Pělucha" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Frankie Sabovčik" class="user temp0">
+			<a  class="attendee-name"  href="/lide/frankie-sabovcik">
+				<img src="/data/avatars/fb-10205561800551535.gif" alt="Frankie Sabovčik" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Radek Fryšták" class="user temp0">
+			<a  class="attendee-name"  href="/lide/radek-frystak">
+				<img src="/data/avatars/16362-studna2.png" alt="Radek Fryšták" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Martin Pecha" class="user temp0">
+			<a  class="attendee-name"  href="/lide/martin-pecha-2">
+				<img src="/data/avatars/560ebe86404e5.gif" alt="Martin Pecha" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Kamil Walig" class="user temp0">
+			<a  class="attendee-name"  href="/lide/kamil-walig-3">
+				<img src="/data/avatars/tw-2238049868.png" alt="Kamil Walig" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Adam Eda Zemek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/adam-zemek">
+				<img src="/data/avatars/53426-netteRT6.gif" alt="Adam Eda Zemek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Petr Hejna" class="user temp0">
+			<a  class="attendee-name"  href="/lide/petr-hejna-3">
+				<img src="/data/avatars/tw-88511000.png" alt="Petr Hejna" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Oldřich Šálek" class="user temp0">
+			<a  class="attendee-name"  href="/lide/oldrich-salek-2">
+				<img src="/data/avatars/tw-83572605.png" alt="Oldřich Šálek" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					bloger, fotograf, PHP programátor http://salek.info
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Ján Bočínec" class="user temp0">
+			<a  class="attendee-name"  href="/lide/jan-bocinec">
+				<img src="/data/avatars/54760e17dcb70.gif" alt="Ján Bočínec" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					WordPress senior developer pôsobiaci v slobodnej firme Webikon. Dobré pivo nikdy nie je zlé. Viac sa o mne dozviete na bocinec.sk
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Igor Hlina" class="user temp0">
+			<a  class="attendee-name"  href="/lide/igor-hlina">
+				<img src="/data/avatars/516f802531269.gif" alt="Igor Hlina" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					Web developer, geek, Mac OS user.
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Martin Mayer" class="user temp0">
+			<a  class="attendee-name"  href="/lide/mayermartin">
+				<img src="/data/avatars/449-1936214_1201818651464_7028274_n.jpg" alt="Martin Mayer" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Ondra Kopr" class="user temp0">
+			<a  class="attendee-name"  href="/lide/ondra-kopr">
+				<img src="/data/avatars/fb-10205508176884533.gif" alt="Ondra Kopr" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Zemistr" class="user temp0">
+			<a  class="attendee-name"  href="/lide/zemistr">
+				<img src="/data/avatars/tw-230887342.png" alt="Zemistr" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+						<div class="clearfix"></div>
+
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div id="snippet--visitorsnot">
+					<h4>Nezúčastní se: <span class="text-muted">2</span></h4>
+					<div class="attending user-list  ">
+	<div data-title="Michael Moravec" class="user temp0">
+			<a  class="attendee-name"  href="/lide/majkl578">
+				<img src="/data/avatars/473-avatar_white.gif" alt="Michael Moravec" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+	<div data-title="Daniel Marhan" class="user temp0">
+			<a  class="attendee-name"  href="/lide/daniel-marhan-2">
+				<img src="/data/avatars/tw-48985060.png" alt="Daniel Marhan" />
+			</a>
+			<div class="popover-content hidden">
+				<p>
+					
+				</p>
+			</div>
+
+
+	</div>
+
+
+						<div class="clearfix"></div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+<div class="" id="snippet-poll-poll">	
+
+		<div class="poll">
+
+			<h4 class="no-margin-top">Hlasování</h4>
+			<p class="pollName">
+				Pivo
+			</p>
+
+			<div class=" alert alert-warning margin-bottom">V této anketě mohou hlasovat pouze účastníci tohoto srazu.</div>
+			
+				
+			<div class="pollRows folded0">
+			
+				
+			
+				<div class="pollRow">
+			
+					
+					<p class="pollRowText">
+						samosebou že jdu
+					</p>
+					
+			
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%">
+							<span class="pull-left" style="padding-left: 10px">13</span>
+						</div>
+					</div>
+					
+					
+						
+					
+					
+				</div>
+				<div class="pollRow">
+			
+					
+					<p class="pollRowText">
+						rozhodnu se na místě (a případně počítám s tím, že budu stát
+u stolu)
+					</p>
+					
+			
+					<div class="progress">
+						<div class="progress-bar" style="width: 31%">
+							<span class="pull-left" style="padding-left: 10px">4</span>
+						</div>
+					</div>
+					
+					
+						
+					
+					
+				</div>
+			</div>
+
+		</div>
+		<div class="poll">
+
+			<h4 class="no-margin-top">Hlasování</h4>
+			<p class="pollName">
+				Workshop (rychlost)
+			</p>
+
+			<div class=" alert alert-warning margin-bottom">V této anketě mohou hlasovat pouze účastníci tohoto srazu.</div>
+			
+				
+			<div class="pollRows folded0">
+			
+				
+			
+				<div class="pollRow">
+			
+					
+					<p class="pollRowText">
+						dorazím na dopolední workshop
+					</p>
+					
+			
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%">
+							<span class="pull-left" style="padding-left: 10px">27</span>
+						</div>
+					</div>
+					
+					
+						
+					
+					
+				</div>
+			</div>
+
+		</div>
+
+
+</div>	
+
+
+
+
+			Správci srazu:
+				    <a href="/lide/davidgrudl"><img src="/data/avatars/380-ae857e3d8d5c630348cb688f2de2d17a[1].png" class="avatar-micro" alt="avatar" rel="tooltip" title="David Grudl" /></a>
+						<a href="/lide/vrtak-cz"><img src="/data/avatars/382.gif" class="avatar-micro" alt="avatar" rel="tooltip" title="Patrik Votoček" /></a>						<a href="/lide/petrp"><img src="/data/avatars/419.gif" class="avatar-micro" alt="avatar" rel="tooltip" title="Petr Procházka" /></a>						<a href="/lide/vitek-jezek"><img src="/data/avatars/4f8db53d97cd7.gif" class="avatar-micro" alt="avatar" rel="tooltip" title="Vitek Jezek" /></a>						<a href="/lide/igor-hlina"><img src="/data/avatars/516f802531269.gif" class="avatar-micro" alt="avatar" rel="tooltip" title="Igor Hlina" /></a>						<a href="/lide/chemix"><img src="/data/avatars/796-on_cm_small.jpg" class="avatar-micro" alt="avatar" rel="tooltip" title="Honza Černý chemiX" /></a>						<a href="/lide/filip-prochazka"><img src="/data/avatars/814-internet.jpg" class="avatar-micro" alt="avatar" rel="tooltip" title="Filip Procházka" /></a>						<a href="/lide/petr-masat-2"><img src="/data/avatars/" class="avatar-micro" alt="avatar" rel="tooltip" title="Petr MAŠÁT" /></a>
+			<hr />
+
+			<div class="hidden-phone">
+				<div class="event-social-button"><div style="position: relative; top: 0px" href="http://srazy.info/posledni-sobota/6226" class="fb-like" data-send="false" data-action="like" data-width="50" data-show-faces="false" data-layout="box_count" data-font="trebuchet ms"></div></div>
+				<div class="event-social-button"><div style="position: relative; top: -1px;" class="g-plusone" data-size="tall" data-href="http://srazy.info/posledni-sobota/6226"></div></div>
+				<div class="event-social-button"><a  href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-url="http://srazy.info/posledni-sobota/6226" data-text="27. února 2016 se koná Poslední sobota  #posobota">Tweet</a></div>
+
+				<div class="clearfix"></div>
+				<p class="margin-top">
+					<i class="icon-share-sign"></i> <b><a href="http://pojd.me/4sy" rel="tooltip" title="Krátká URL">http://pojd.me/4sy</a></b>
+				</p>
+
+
+
+					<hr />
+
+					#posobota
+
+			</div>
+			<hr />
+
+			<span class="dropdown">
+				<a rel="tooltip" title="Export" data-placement="top" class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+					<i class="icon-calendar"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a title="Google Calendar"  href="https://www.google.com/calendar/render?action=TEMPLATE&text=Poslední sobota&dates=20160227T150000/20160227T150000&details=
+https://forum.nette.org/…no-27-2-2016#…
+
+Program je ve výstavbě a časy se ještě mohou měnit a po zkušenostech
+víme že se mění :)
+
+Díky
+JetBrains
+PeckaDesign
+Proof &amp;amp; Reason
+Tripomatic
+&location=FIT VUT Brno - Královo Pole&pli=1&sf=true&output=xml">Google Calendar</a></li>
+					<li><a title="iCal" href="/posledni-sobota/6226/ical">iCal</a></li>
+				</ul>
+			</span>
+
+
+
+
+
+			<div class="clearfix"></div>
+
+
+		</div>
+
+
+	</div>
+
+
+	<div class="col-span-8 pull-left">
+<div class="comments">
+
+
+
+
+<div id="snippet-comments-comments">
+		<div class="comment" id="comment-19267">
+
+			<img class="avatar-small" src="/data/avatars/46668-intelati.jpg" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/adam-zurek" class="comment-name">Adam Žurek</a></b>:
+				<b><i class="icon-share-alt"></i> #5 Roman Mátyus:</b> O vikendu myslim ze v poho. V cele ulici Bozetechova se da
+jednosmerne parkovat.
+
+				<p class="comment-footer">
+					<span class="comment-number">#6</span> <span class="comment-date">26. 2. 2016 v 20:23</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="comment" id="comment-19264">
+
+			<img class="avatar-small" src="/data/avatars/4425-red_panda_mini.jpg" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/romiix-org" class="comment-name">Roman Mátyus</a></b>:
+				Ako je to s parkovaním v okolí?
+
+				<p class="comment-footer">
+					<span class="comment-number">#5</span> <span class="comment-date">26. 2. 2016 v 19:17</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="comment" id="comment-19263">
+
+			<img class="avatar-small" src="/data/avatars/tw-134902096.png" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/ondra-votava-2" class="comment-name">Ondra Votava</a></b>:
+				jedu autem zítra z Prahy, pojedu už na workshop, takže pokud se někdo chce
+přidat…
+
+				<p class="comment-footer">
+					<span class="comment-number">#4</span> <span class="comment-date">26. 2. 2016 v 08:45</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="comment" id="comment-19262">
+
+			<img class="avatar-small" src="/data/avatars/796-on_cm_small.jpg" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/chemix" class="comment-name">Honza Černý chemiX</a></b>:
+				POZOR POZOR Workshop: Zrychlete aplikaci s pomocí xdebug a blackfire se kona
+v jinem prostoru nez odpoledni akce a to v Impact Hub/Brno, Cyrilská 7
+
+				<p class="comment-footer">
+					<span class="comment-number">#3</span> <span class="comment-date">26. 2. 2016 v 00:47</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="comment" id="comment-19226">
+
+			<img class="avatar-small" src="/data/avatars/796-on_cm_small.jpg" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/chemix" class="comment-name">Honza Černý chemiX</a></b>:
+				<b><i class="icon-share-alt"></i> #1 Jan Pobořil:</b> Poslední sobotu v měsíci si nevybereš, je tesana do kamene
+už roky dopředu :) Navíc hype barcampů už je dávno pryč ;-)
+
+				<p class="comment-footer">
+					<span class="comment-number">#2</span> <span class="comment-date">17. 2. 2016 v 12:40</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="comment" id="comment-19225">
+
+			<img class="avatar-small" src="/data/avatars/542ed226c1a98.gif" alt="avatar" />
+
+			<div  class="comment-bubble ">
+				<div class="arrow-left" style="border-right-color: #ddd; margin-top: 30px"></div>
+				<div class="arrow-left-border" style="border-right-color: #fff; margin-top: 30px"></div>
+
+
+				<b><a href="/lide/jan-poboril" class="comment-name">Jan Pobořil</a></b>:
+				Po dlouhé době jste přijeli do Brna a zrovna v temrínu Barcampu :-(
+
+				<p class="comment-footer">
+					<span class="comment-number">#1</span> <span class="comment-date">17. 2. 2016 v 12:36</span>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<div style="text-align: center">
+			<img src="/images/endpage.png" alt="--" />
+	</div>
+
+			<input type="hidden" id="page" value="1" />
+</div></div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#nextButton").live('click', function(e){
+
+		$.get("\/posledni-sobota\/6226?do=comments-more", {'comments-page': $("#page").val()}, function(html){
+			$("#nextButton").remove();
+			$("div.comments").append(html);
+			$("#page").val(parseInt($("#page").val()) + 1);
+		}, 'html');
+		e.preventDefault();
+	});
+
+	$("a.reply").click(function(event){
+		$(".comment-input").focus().val($(".comment-input").val() + "[" + $(this).attr('data-reply-to') + " " + $(this).parents("div.comment-bubble").find("a.comment-name").text() + "] ");
+		event.preventDefault();
+	});
+
+});
+
+
+</script>
+
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade in" id="modal-universal" aria-hidden="true" id="snippet--closeModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+<div id="snippet--modal"></div>		</div>
+	</div>
+</div>
+
+
+<div class="modal in fade" id="modal-sorrytemp" data-ajax="/posledni-sobota/6226?state=yes&amp;do=attending" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Bohužel, místo už je obsazeno</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						V této chvíli vás už nemůžeme zařadit mezi účastníky, protože účast na tomto srazu je omezená.
+					</p>
+					<p>
+						Jste ale v pořadí a když se něco změní, zařadíme vás mezi účastníky. Sledujte i nadále tento sraz.
+					</p>
+				</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" data-dismiss="modal">OK</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal in fade ajax-clear" id="modal-attenders-yes" data-ajax="/posledni-sobota/6226?what=yes&amp;do=showAll" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Potvrzení hosté</h3>
+			</div>
+			<div class="modal-body">
+<div id="snippet--visitorsallyes"></div>			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" data-dismiss="modal">Zavřít</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal in fade ajax-spinner" id="modal-attenders-temp" data-ajax="/posledni-sobota/6226?what=temp&amp;do=showAll" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Čekající ve frontě</h3>
+			</div>
+			<div class="modal-body" style="position: relative">
+				<p>
+						Protože kapacita srazu je již naplněna, nejsou tito lidé mezi účastníky srazu. Jsou ale ve frontě, pokud by se uvolnilo místo.
+				</p>
+<div id="snippet--visitorsalltemp"></div>			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" data-dismiss="modal">Zavřít</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal in fade" id="modal-attenders-maybe" data-ajax="/posledni-sobota/6226?what=maybe&amp;do=showAll" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Možná se zúčastní</h3>
+			</div>
+			<div class="modal-body" style="position: relative">
+<div id="snippet--visitorsallmaybe"></div>			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" data-dismiss="modal">Zavřít</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal in fade" id="modal-attenders-not" data-ajax="/posledni-sobota/6226?what=not&amp;do=showAll" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Nezúčastní se</h3>
+			</div>
+			<div class="modal-body" style="position: relative">
+<div id="snippet--visitorsallnot"></div>			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" data-dismiss="modal">Zavřít</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+<script type="text/javascript">
+  window.___gcfg = { lang: '"cs"'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+		<div class="footer hidden-phone">
+			<a id="reportButton" data-toggle="modal" href="#modal-report">Nahlásit chybu či napsat názor</a> &bull;
+			<a href="http://twitter.com/srazy">Twitter</a> &bull;
+			<a href="http://facebook.com/srazy.info">Facebook</a> &bull;
+			<a href="/napoveda/api">API</a> &bull;
+			<a href="http://glyphicons.com/">Glyphicons</a>
+			 &bull; <a href="http://blog.srazy.info">Blog</a> &bull; <a href="http://eventle.com">English</a>
+
+		</div>
+
+	</div>
+
+
+
+
+	<div id="fb-root" class="hidden"></div>
+	<script src="http://connect.facebook.net/cs_CZ/all.js"></script>
+	<script type="text/javascript">
+		var Facebook = {
+			appId: "56902308197",
+			loginUrl: "\/posledni-sobota\/6226?do=FbLogin",
+			connectUrl: "#"
+		};
+	</script>
+
+
+<!-- BlueBoard.cz Pocitadlo -->
+<span id="bbpocitadlo-span-st8nb2sa4v4jru55x9j0krn57kikh9"><a id="bbpocitadlo-st8nb2sa4v4jru55x9j0krn57kikh9" href="http://blueboard.cz"></a></span>
+<script type="text/javascript" src="http://blueboard.cz/counter_1.php?jid=st8nb2sa4v4jru55x9j0krn57kikh9"></script>
+<!-- BlueBoard.cz Pocitadlo KONEC -->
+
+
+</body>
+</html>

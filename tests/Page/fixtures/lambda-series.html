@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="description" content="Srazy.info  - Online nástroj pro pořádání srazů" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="7fUzB43pneqjD7WEIOGNVTTjOa7coql6frdj1-AsCbg" />
+	<meta property="fb:admins" content="zraly" />
+	<meta property="og:site_name" content="Srazy.info" />
+
+			<meta property="og:image" content="http://srazy.info/data/events/1701.jpg" />
+			<meta property="og:title" content="Lambda Meetup Ostrava" />
+
+
+	<title>Lambda Meetup Ostrava: Termíny - Srazy.info</title>
+
+
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css?v=1" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/font-awesome.css?v=2" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/datepicker.css" type="text/css" media="screen" />
+
+
+
+
+	<link rel="stylesheet" media="screen" href="/css/screen.css?v=6" type="text/css" />
+	<link rel="stylesheet" media="print" href="/css/print.css" type="text/css" />
+
+
+
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/netteForms.js"></script>
+	<script type="text/javascript" src="/js/nette.ajax.js?v=1"></script>
+	<script src="/bootstrap/js/bootstrap.min.js?v=1" type="text/javascript"></script>
+
+
+	<script src="/js/main.js?v=3" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-89820-10']);
+	  _gaq.push(['_setDomainName', 'none']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+
+
+</head>
+
+<body>
+
+	<!-- part for every layout -->
+
+
+	<div class="modal in fade" id="modal-report" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Nahlásit chybu či napsat názor</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+            Jsme v čilém vývoji a velmi nám pomůže, pokud nám napíšete váš názor na to, co se vám <b>nelíbí</b>, co vám přijde <b>divné</b> nebo co <b>nechápete</b>. Rádi bychom také věděli,
+            pokud jste někde objevili nějakou <b>chybu</b>. Pokusíme se ji brzo opravit.
+        </p>
+        <p>
+            Je to anonymní. Chcete-li kontaktovat autora přímo, napište mu email: jirka&#64;blueboard.cz
+        </p>
+<form action="/lambda-meetup-ostrava/terminy/?do=reportForm-submit" method="post" id="frm-reportForm"><label for="frmreportForm-name">Jméno:</label>						<input type="text" size="40" name="name" id="frmreportForm-name" value="" />
+<label for="frmreportForm-email">E-mail, pokud chcete dostat odpověď:</label>						<input type="text" size="40" name="email" id="frmreportForm-email" value="" />
+<label for="frmreportForm-text"></label>						<textarea rows="5" cols="60" name="text" id="frmreportForm-text" required="required" data-nette-rules="{op:':filled',msg:'Write some feedback please.'}"></textarea>
+
+						<input class="spam hidden" type="text" size="40" name="spam" id="frmreportForm-spam" value="" />
+
+						<input class="btn btn-primary" type="submit" name="sub" id="frmreportForm-sub" value="Odeslat" />
+
+
+
+</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="modal in fade" id="modal-login">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="modal-title">Přihlásit se</h3>
+					</div>
+					<div class="modal-body">
+<div id="snippet--login">								<div class="row">
+									<div class="col-span-6">
+<form class="form-vertical ajax" action="/lambda-meetup-ostrava/terminy/?do=loginForm-submit" method="post" id="frm-loginForm">											<input class="margin-bottom" type="email" placeholder="Email" size="30" name="email" id="frmloginForm-email" required="required" data-nette-rules="{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;},{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;}" value="" /> <br />
+											<input class="margin-bottom" placeholder="Password" type="password" name="pass" id="frmloginForm-pass" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te heslo.&quot;}" /> <br />
+											<input class="btn btn-primary" type="submit" name="sub" id="frmloginForm-sub" value="Přihlásit se" />
+
+												<input data-modal-fill="redirect" type="hidden" name="redirect" id="frmloginForm-redirect" value="" />
+</form>
+									</div>
+									<div class="col-span-6">
+											<h4 class="no-top-margin">Nebo se přihlašte pomocí</h4>
+											<a class="ajax-like" href="/lambda-meetup-ostrava/terminy/?do=FbConnect" title="Facebook" rel="tooltip"><img src="/images/icons/social/facebook_32.png" alt="Facebook" /></a>
+											<a class="ajax-like" href="/lambda-meetup-ostrava/terminy/?login=1&amp;do=twitterConnect" title="Twitter" rel="tooltip" ><img src="/images/icons/social/twitter_32.png" alt="Twitter" /></a>
+										<div class="alert alert-warning margin-top">
+											Pokud se vám nejde přihlásit přes Twitter, odeberte si Srazy.info z aplikací Twitteru a zkuste to znovu. Děkujeme
+										</div>
+									</div>
+								</div>
+
+								<div class="clear"></div>
+								<hr />
+
+								<p style="text-align: right">
+									<a href="/vytvorit-ucet/" class="btn btn-success"><i class="icon-plus"></i> Vytvořit nový účet</a>
+									<a href="#" class="btn" data-toggle-element="lost-password"><i class="icon-question-sign"></i> Nevím heslo</a>
+								</p>
+								<div id="lost-password" class="hidden">
+									<hr />
+									<h3>Nevím heslo</h3>
+<form class="form-inline margin-top" action="/lambda-meetup-ostrava/terminy/?do=lostPassForm-submit" method="post" id="frm-lostPassForm">										<div class="input-group">
+											<input class="" placeholder="Email" type="text" size="30" name="email" id="frmlostPassForm-email" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;},{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;}" value="" />
+											<span class="input-group-btn"><input class="btn btn-primary" type="submit" name="sub" id="frmlostPassForm-sub" value="Zaslat žádost o nové heslo" /></span>
+										</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+								</div>
+
+
+</div>					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="ajax-progress">
+		<div></div>
+	</div>
+
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+
+			<div class="visible-phone pull-left">
+				<a class="btn" title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i></a>
+			</div>
+
+
+
+			<ul class="nav pull-right nav-login" id="snippet--loginInfo">
+					<li class="user-info"><a data-toggle="modal" href="#modal-login" data-form-fill='{ "name": "redirect", "value": ""}'><i class="icon-key"></i> <span class="hidden-phone">Přihlásit se</span></a></li>
+			</ul>
+
+			<a class="navbar-brand" href="/"><img class="logo" src="/images/logo-cs.png?v=1" alt="Srazy.info" /></a>
+
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li>
+					<a title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i> <b>Vytvořit sraz</b></a>
+				</li>
+			</ul>
+<form class="navbar-form pull-left hidden-phone" action="/lambda-meetup-ostrava/terminy/?do=searchForm-submit" method="post" id="frm-searchForm">				<input class="search-query" type="text" size="20" placeholder="Search" name="s" id="frmsearchForm-s" required="required" data-nette-rules="{op:':filled',msg:&quot;\&quot;Nic\&quot; se velmi \u0161patn\u011b hled\u00e1, napi\u0161te n\u011bjak\u00fd text a zkuste to pros\u00edm znovu.&quot;}" value="" />
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li class="divider-vertical"></li>
+				<li>
+					<a class="language-flag" title="english version" href="http://eventle.com">english</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+
+	<div class="container">
+
+
+
+
+<div id="snippet--userMessages">						<div class="flashes">
+							
+						</div>
+
+
+
+
+</div>
+
+		<!-- end of part for every layout -->
+
+	<div class="vevent event-wrap" itemscope itemtype="http://schema.org/Event">
+
+		<div class=" event-header">
+
+
+					<img data-placement="left"  src="/data/events/1701-lambdaova.png" class="event-logo hidden-phone" alt="logo" itemprop="image" />
+
+
+				<h1 class="event-title">
+					<span class="summary" itemprop="name">
+						<a href="/lambda-meetup-ostrava">Lambda Meetup Ostrava</a>
+					</span>
+				</h1>
+
+					<a rel="tooltip" data-placement="bottom" title="Sledování srazu vám umožní vědět o dalších termínech" class="event-follow event-link ajax btn btn-small" data-form-fill='{ "name": "redirect", "value": "/lambda-meetup-ostrava/terminy/?follow=true&amp;do=Follow"}' href="#modal-login" data-toggle="modal">Sledovat</a>
+				<a class="event-link" href="/lambda-meetup-ostrava/komunita/">Komunita <span class="badge">21</span></a>
+				<a class="event-link" href="/lambda-meetup-ostrava/terminy/">Všechny termíny <span class="badge">5</span></a>
+
+
+			<div class="row">
+				<div class="span12">
+
+
+
+					<div class="event-desc " itemprop="description"  id="snippet--editEventDesc">
+						<div class="event-desc-inner">
+								
+<p>Sraz pro zájemce funkcionálního programování (Clojure, Scala, Java
+8 streamy, Elm, lodash, … cokoliv :) )</p>
+
+<ul>
+	<li>G+: <a href="https://plus.google.com/communities/110902954360410928675"
+	rel="nofollow">https://plus.google.com/…360410928675</a></li>
+</ul>
+
+<!-- by Texy2! -->
+						</div>
+						<div class="event-desc-form">
+<form class="form-vertical ajax" action="/lambda-meetup-ostrava/terminy/?do=editEventDescForm-submit" method="post" id="frm-editEventDescForm">								<div class="controls">
+									<textarea style="width: 100%; box-sizing: border-box" cols="80" rows="4" name="desc" id="frmeditEventDescForm-desc">Sraz pro zájemce funkcionálního programování (Clojure, Scala, Java 8 streamy, Elm, lodash, ... cokoliv :) )
+
+- G+: https://plus.google.com/communities/110902954360410928675</textarea>
+								</div>
+								<div class="controls">
+									<input class="btn btn-primary" type="submit" name="sub" id="frmeditEventDescForm-sub" value="Uložit" />
+									<input type="button" class = "btn editable-cancel" value="Zpět" />
+								</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+		<div class=" fadeInUp animated animated-delayed">
+			<div class="event-arrow">
+				<div class="arrow-up hidden-phone" style="border-bottom-color: #fff; margin-left: 60px"></div>
+				<div class="arrow-up-border hidden-phone" style="border-bottom-color: #ccc; margin-left: 60px"></div>
+			</div>
+			<div class="event-body">
+<div class="event-main">
+	<div class="row">
+		<div class="col-span-6">
+			<h3 class="margin-bottom">Budoucí termíny</h3>
+					<div class="row">
+						<div class="col-span-2">
+							<div class="datelist span1"><div class="datelist-month"> bře</div><div class="datelist-day"> 2</div><div class="datelist-year">2016</div></div>
+						</div>
+						<div class="col-span-10">
+							<h4><a href="/lambda-meetup-ostrava/6231">LambdaOva 5 - Elm, Redux</a></h4>
+						</div>
+					</div>
+		</div>
+		<div class="col-span-6">
+			<h3 class="margin-bottom">Proběhlé termíny</h3>
+					<div class="row">
+						<div class="col-span-2">
+							<div class="datelist"><div class="datelist-month"> bře</div><div class="datelist-day">24</div><div class="datelist-year">2014</div></div>
+						</div>
+						<div class="col-span-10">
+							<h4><a href="/lambda-meetup-ostrava/4389">LamdaOva 4 - React!</a></h4>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-span-2">
+							<div class="datelist"><div class="datelist-month"> pro</div><div class="datelist-day">17</div><div class="datelist-year">2013</div></div>
+						</div>
+						<div class="col-span-10">
+							<h4><a href="/lambda-meetup-ostrava/4098">LambdaOva III</a></h4>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-span-2">
+							<div class="datelist"><div class="datelist-month"> zář</div><div class="datelist-day">19</div><div class="datelist-year">2013</div></div>
+						</div>
+						<div class="col-span-10">
+							<h4><a href="/lambda-meetup-ostrava/3818">_LAMBDA__BANG__BANG__BANG_-2</a></h4>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-span-2">
+							<div class="datelist"><div class="datelist-month"> srp</div><div class="datelist-day">19</div><div class="datelist-year">2013</div></div>
+						</div>
+						<div class="col-span-10">
+							<h4><a href="/lambda-meetup-ostrava/3595">pondělí</a></h4>
+						</div>	
+					</div>
+		</div>
+	</div>
+	
+</div>
+
+	
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+		<div class="footer hidden-phone">
+			<a id="reportButton" data-toggle="modal" href="#modal-report">Nahlásit chybu či napsat názor</a> &bull;
+			<a href="http://twitter.com/srazy">Twitter</a> &bull;
+			<a href="http://facebook.com/srazy.info">Facebook</a> &bull;
+			<a href="/napoveda/api">API</a> &bull;
+			<a href="http://glyphicons.com/">Glyphicons</a>
+			 &bull; <a href="http://blog.srazy.info">Blog</a> &bull; <a href="http://eventle.com">English</a>
+
+		</div>
+
+	</div>
+
+
+
+
+	<div id="fb-root" class="hidden"></div>
+	<script src="http://connect.facebook.net/cs_CZ/all.js"></script>
+	<script type="text/javascript">
+		var Facebook = {
+			appId: "56902308197",
+			loginUrl: "\/lambda-meetup-ostrava\/terminy\/?do=FbLogin",
+			connectUrl: "#"
+		};
+	</script>
+
+
+<!-- BlueBoard.cz Pocitadlo -->
+<span id="bbpocitadlo-span-st8nb2sa4v4jru55x9j0krn57kikh9"><a id="bbpocitadlo-st8nb2sa4v4jru55x9j0krn57kikh9" href="http://blueboard.cz"></a></span>
+<script type="text/javascript" src="http://blueboard.cz/counter_1.php?jid=st8nb2sa4v4jru55x9j0krn57kikh9"></script>
+<!-- BlueBoard.cz Pocitadlo KONEC -->
+
+
+</body>
+</html>

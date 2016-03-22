@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="description" content="Srazy.info  - Online nástroj pro pořádání srazů" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="7fUzB43pneqjD7WEIOGNVTTjOa7coql6frdj1-AsCbg" />
+	<meta property="fb:admins" content="zraly" />
+	<meta property="og:site_name" content="Srazy.info" />
+
+
+
+	<title>Výsledky hledání 'web' - Srazy.info</title>
+
+
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css?v=1" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/font-awesome.css?v=2" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/datepicker.css" type="text/css" media="screen" />
+
+
+
+
+	<link rel="stylesheet" media="screen" href="/css/screen.css?v=6" type="text/css" />
+	<link rel="stylesheet" media="print" href="/css/print.css" type="text/css" />
+
+
+
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/netteForms.js"></script>
+	<script type="text/javascript" src="/js/nette.ajax.js?v=1"></script>
+	<script src="/bootstrap/js/bootstrap.min.js?v=1" type="text/javascript"></script>
+
+
+	<script src="/js/main.js?v=3" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-89820-10']);
+	  _gaq.push(['_setDomainName', 'none']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+
+
+</head>
+
+<body>
+
+	<!-- part for every layout -->
+
+
+	<div class="modal in fade" id="modal-report" aria-hidden="true">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title">Nahlásit chybu či napsat názor</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+            Jsme v čilém vývoji a velmi nám pomůže, pokud nám napíšete váš názor na to, co se vám <b>nelíbí</b>, co vám přijde <b>divné</b> nebo co <b>nechápete</b>. Rádi bychom také věděli,
+            pokud jste někde objevili nějakou <b>chybu</b>. Pokusíme se ji brzo opravit.
+        </p>
+        <p>
+            Je to anonymní. Chcete-li kontaktovat autora přímo, napište mu email: jirka&#64;blueboard.cz
+        </p>
+<form action="/hledat/?s=web&amp;do=reportForm-submit" method="post" id="frm-reportForm"><label for="frmreportForm-name">Jméno:</label>						<input type="text" size="40" name="name" id="frmreportForm-name" value="" />
+<label for="frmreportForm-email">E-mail, pokud chcete dostat odpověď:</label>						<input type="text" size="40" name="email" id="frmreportForm-email" value="" />
+<label for="frmreportForm-text"></label>						<textarea rows="5" cols="60" name="text" id="frmreportForm-text" required="required" data-nette-rules="{op:':filled',msg:'Write some feedback please.'}"></textarea>
+
+						<input class="spam hidden" type="text" size="40" name="spam" id="frmreportForm-spam" value="" />
+
+						<input class="btn btn-primary" type="submit" name="sub" id="frmreportForm-sub" value="Odeslat" />
+
+
+
+</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="modal in fade" id="modal-login">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="modal-title">Přihlásit se</h3>
+					</div>
+					<div class="modal-body">
+<div id="snippet--login">								<div class="row">
+									<div class="col-span-6">
+<form class="form-vertical ajax" action="/hledat/?s=web&amp;do=loginForm-submit" method="post" id="frm-loginForm">											<input class="margin-bottom" type="email" placeholder="Email" size="30" name="email" id="frmloginForm-email" required="required" data-nette-rules="{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;},{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;}" value="" /> <br />
+											<input class="margin-bottom" placeholder="Password" type="password" name="pass" id="frmloginForm-pass" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te heslo.&quot;}" /> <br />
+											<input class="btn btn-primary" type="submit" name="sub" id="frmloginForm-sub" value="Přihlásit se" />
+
+												<input data-modal-fill="redirect" type="hidden" name="redirect" id="frmloginForm-redirect" value="" />
+</form>
+									</div>
+									<div class="col-span-6">
+											<h4 class="no-top-margin">Nebo se přihlašte pomocí</h4>
+											<a class="ajax-like" href="/hledat/?s=web&amp;do=FbConnect" title="Facebook" rel="tooltip"><img src="/images/icons/social/facebook_32.png" alt="Facebook" /></a>
+											<a class="ajax-like" href="/hledat/?login=1&amp;s=web&amp;do=twitterConnect" title="Twitter" rel="tooltip" ><img src="/images/icons/social/twitter_32.png" alt="Twitter" /></a>
+										<div class="alert alert-warning margin-top">
+											Pokud se vám nejde přihlásit přes Twitter, odeberte si Srazy.info z aplikací Twitteru a zkuste to znovu. Děkujeme
+										</div>
+									</div>
+								</div>
+
+								<div class="clear"></div>
+								<hr />
+
+								<p style="text-align: right">
+									<a href="/vytvorit-ucet/" class="btn btn-success"><i class="icon-plus"></i> Vytvořit nový účet</a>
+									<a href="#" class="btn" data-toggle-element="lost-password"><i class="icon-question-sign"></i> Nevím heslo</a>
+								</p>
+								<div id="lost-password" class="hidden">
+									<hr />
+									<h3>Nevím heslo</h3>
+<form class="form-inline margin-top" action="/hledat/?s=web&amp;do=lostPassForm-submit" method="post" id="frm-lostPassForm">										<div class="input-group">
+											<input class="" placeholder="Email" type="text" size="30" name="email" id="frmlostPassForm-email" required="required" data-nette-rules="{op:':filled',msg:&quot;Napi\u0161te e-mail.&quot;},{op:':email',msg:&quot;Napi\u0161te e-mail ve spr\u00e1vn\u00e9m form\u00e1tu.&quot;}" value="" />
+											<span class="input-group-btn"><input class="btn btn-primary" type="submit" name="sub" id="frmlostPassForm-sub" value="Zaslat žádost o nové heslo" /></span>
+										</div>
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+								</div>
+
+
+</div>					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="ajax-progress">
+		<div></div>
+	</div>
+
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+
+			<div class="visible-phone pull-left">
+				<a class="btn" title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i></a>
+			</div>
+
+
+
+			<ul class="nav pull-right nav-login" id="snippet--loginInfo">
+					<li class="user-info"><a data-toggle="modal" href="#modal-login" data-form-fill='{ "name": "redirect", "value": ""}'><i class="icon-key"></i> <span class="hidden-phone">Přihlásit se</span></a></li>
+			</ul>
+
+			<a class="navbar-brand" href="/"><img class="logo" src="/images/logo-cs.png?v=1" alt="Srazy.info" /></a>
+
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li>
+					<a title="Vytvořit sraz" href="#modal-login" data-toggle="modal" data-form-fill='{ "name": "redirect", "value": "/vytvorit-sraz/"}'><i class="icon-plus"></i> <b>Vytvořit sraz</b></a>
+				</li>
+			</ul>
+<form class="navbar-form pull-left hidden-phone" action="/hledat/?s=web&amp;do=searchForm-submit" method="post" id="frm-searchForm">				<input class="search-query" type="text" size="20" placeholder="Search" name="s" id="frmsearchForm-s" required="required" data-nette-rules="{op:':filled',msg:&quot;\&quot;Nic\&quot; se velmi \u0161patn\u011b hled\u00e1, napi\u0161te n\u011bjak\u00fd text a zkuste to pros\u00edm znovu.&quot;}" value="" />
+<div><!--[if IE]><input type=IEbug disabled style="display:none"><![endif]--></div>
+</form>
+
+			<ul class="nav nav-eventle hidden-phone">
+				<li class="divider-vertical"></li>
+				<li>
+					<a class="language-flag" title="english version" href="http://eventle.com">english</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+
+	<div class="container">
+
+
+
+
+<div id="snippet--userMessages">						<div class="flashes">
+							
+						</div>
+
+
+
+
+</div>
+
+		<!-- end of part for every layout -->
+
+		
+<div class="white-body body-default">
+
+<h2 class="margin-bottom">Výsledky hledání 'web'</h2>
+
+<div class="row">
+		<div class="span6">
+			<h3>Srazy</h3>
+				<h3><a href="/webcamp">WebCamp</a></h3>
+				<h3><a href="/konference-dobry-web">Konference Dobrý web</a></h3>
+				<h3><a href="/mezi-webem-zemi">Mezi webem a zemí</a></h3>
+				<h3><a href="/webexpo">WebExpo Prague</a></h3>
+				<h3><a href="/webexpo-warm-party">WebExpo warm up party</a></h3>
+				<h3><a href="/webtrh-sraz">Webtrh Sraz</a></h3>
+				<h3><a href="/web-analytics-wednesday">Web Analytics Wednesday</a></h3>
+				<h3><a href="/konference-user-experience-cesta-uspesnemu-webu">Konference User Experience – Cesta k úspěšnému webu</a></h3>
+				<h3><a href="/webexpo-startup-meetup">Webexpo Startup Meetup</a></h3>
+				<h3><a href="/4it445-vyvoj-webovych-aplikaci-na-vse">4IT445 - Vývoj webových aplikací na VŠE</a></h3>
+				<h3><a href="/snmgug2">"Google je nejlepší kuchař" - workshop o strukturovaném webu</a></h3>
+				<h3><a href="/exwebpo">exwebpo</a></h3>
+				<h3><a href="/postavte-webovy-projekt-tak-abyste-ho-nemuseli-za">Postavte webový projekt, tak abyste ho nemuseli za měsíc přepisovat. Java a Apache Wicket</a></h3>
+				<h3><a href="/zaverecne-prezentace-webovych-projektu-kurzu-4it44">Závěrečné prezentace webových projektů kurzu 4IT445</a></h3>
+				<h3><a href="/sraz-webtrhu-brno">Sraz webtrhu Brno</a></h3>
+				<h3><a href="/tvorime-mobilni-web">Tvoříme mobilní web</a></h3>
+				<h3><a href="/web-inkognito">Web Inkognito</a></h3>
+				<h3><a href="/webdesignerske-skoleni">Webdesignerské školení</a></h3>
+				<h3><a href="/web-meetup">Web Meetup Chomutov</a></h3>
+				<h3><a href="/tkalci-na-webu">Tkalci na webu</a></h3>
+				<h3><a href="/ux-monday-brno-prakticke-predvedeni-nastroju-na-te">UX Monday Brno - Praktické předvedení nástrojů na testování přístupnosti webů</a></h3>
+				<h3><a href="/vendavo-tech-talk-face-of-modern-web-app">Vendavo Tech Talk - Face of Modern Web-App (česky)</a></h3>
+		</div>
+		<div class="span6">
+			<h3>Uživatelé</h3>
+				<h3><a href="/lide/webexpo">WebExpo</a></h3>
+				<h3><a href="/lide/weblogycz">Weblogy.cz</a></h3>
+				<h3><a href="/lide/jakub-weber">Jakub Weber</a></h3>
+				<h3><a href="/lide/marek-weber-navratil">Marek Weber Navrátil</a></h3>
+				<h3><a href="/lide/webmaster">Webmaster</a></h3>
+				<h3><a href="/lide/blueweb-s-r-o">Blueweb s.r.o.</a></h3>
+				<h3><a href="/lide/pavel-weber">Pavel Weber</a></h3>
+				<h3><a href="/lide/jialt-spravcewebu-jihlavske-al">Jialt Správcewebu Jihlavské Alternativy</a></h3>
+				<h3><a href="/lide/erik-webr">Erik Webr</a></h3>
+				<h3><a href="/lide/webdevelopment">WebDevelopment</a></h3>
+				<h3><a href="/lide/lea-leinweberova">Lea Leinweberová</a></h3>
+				<h3><a href="/lide/web-webb">web webb</a></h3>
+				<h3><a href="/lide/tomasv-webcook">Tomášv Webcook</a></h3>
+				<h3><a href="/lide/mangoweb-cz">manGoweb.cz</a></h3>
+				<h3><a href="/lide/webdesign-grafique">Webdesign GRAFIQUE</a></h3>
+		</div>
+</div>
+
+
+	
+</div>		
+			
+
+
+
+		<div class="footer hidden-phone">
+			<a id="reportButton" data-toggle="modal" href="#modal-report">Nahlásit chybu či napsat názor</a> &bull;
+			<a href="http://twitter.com/srazy">Twitter</a> &bull;
+			<a href="http://facebook.com/srazy.info">Facebook</a> &bull;
+			<a href="/napoveda/api">API</a> &bull;
+			<a href="http://glyphicons.com/">Glyphicons</a>
+			 &bull; <a href="http://blog.srazy.info">Blog</a> &bull; <a href="http://eventle.com">English</a>
+
+		</div>
+
+	</div>
+
+
+
+
+	<div id="fb-root" class="hidden"></div>
+	<script src="http://connect.facebook.net/cs_CZ/all.js"></script>
+	<script type="text/javascript">
+		var Facebook = {
+			appId: "56902308197",
+			loginUrl: "\/hledat\/?s=web&do=FbLogin",
+			connectUrl: "#"
+		};
+	</script>
+
+
+<!-- BlueBoard.cz Pocitadlo -->
+<span id="bbpocitadlo-span-st8nb2sa4v4jru55x9j0krn57kikh9"><a id="bbpocitadlo-st8nb2sa4v4jru55x9j0krn57kikh9" href="http://blueboard.cz"></a></span>
+<script type="text/javascript" src="http://blueboard.cz/counter_1.php?jid=st8nb2sa4v4jru55x9j0krn57kikh9"></script>
+<!-- BlueBoard.cz Pocitadlo KONEC -->
+
+
+</body>
+</html>
