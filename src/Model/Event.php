@@ -42,11 +42,19 @@ class Event
 
     private $location;
 
+    private $polls;
+
     public function __construct($name = null, $uri = null, \DateTime $date = null)
     {
         $this->name = $name;
         $this->uri = $uri;
         $this->start = $date;
+        $this->series = new ArrayCollection();
+        $this->sessions = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+        $this->polls = new ArrayCollection();
+        $this->confirmedAttendees = new ArrayCollection();
+        $this->unconfirmedAttendees = new ArrayCollection();
     }
 
     public function getUri()
@@ -191,5 +199,18 @@ class Event
     public function setComments(ArrayCollection $comments)
     {
         $this->comments = $comments;
+    }
+
+    /**
+     * @return Poll[]|ArrayCollection
+     */
+    public function getPolls()
+    {
+        return $this->polls;
+    }
+
+    public function setPolls(ArrayCollection $polls)
+    {
+        $this->polls = $polls;
     }
 }

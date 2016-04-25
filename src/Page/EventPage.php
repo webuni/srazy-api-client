@@ -16,6 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Webuni\Srazy\Crawler;
 use Webuni\Srazy\Model\Comment;
 use Webuni\Srazy\Model\Event;
+use Webuni\Srazy\Model\Poll;
 use Webuni\Srazy\Model\Series;
 use Webuni\Srazy\Model\Session;
 use Webuni\Srazy\Model\User;
@@ -72,6 +73,7 @@ class EventPage extends AbstractPage
 
         $event->setDescription($description);
         $event->setSessions($this->getSessions($event));
+        $event->setPolls($this->getPolls($event));
         $event->setComments($this->getComments($event));
 
         return $event;
@@ -119,6 +121,26 @@ class EventPage extends AbstractPage
         });
 
         return $sessions;
+    }
+
+    public function getPolls($event)
+    {
+        $polls = $this->crawler->filter('.poll')->each(function (Crawler $node) use ($event) {
+            $poll = new Poll();
+            $poll->setEvent($event);
+            $poll->setName(trim($node->filter('.pollName')->text()));
+            $data = $node->filter('.pollRow')->each(function ($node) {
+                return [
+                    trim($node->filter('.pollRowText')->text()),
+                    trim($node->filter('.progress')->text()),
+                ];
+            });
+            $poll->setChoices(array_combine(array_column($data, 0), array_column($data, 1)));
+
+            return $poll;
+        });
+
+        return new ArrayCollection($polls);
     }
 
     public function getComments($event)

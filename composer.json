@@ -4,6 +4,7 @@
     "keywords": ["srazy.info", "webuni", "api"],
     "type": "library",
     "require": {
+        "php": "^5.5|^7.0",
         "guzzlehttp/guzzle": "^6.0",
         "symfony/dom-crawler": "^3.1@dev",
         "symfony/css-selector": "^3.0",
